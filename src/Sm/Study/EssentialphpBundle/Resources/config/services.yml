@@ -1,4 +1,0 @@
-services:
-#    sm_study_essentialphp.example:
-#        class: Sm\Study\EssentialphpBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]

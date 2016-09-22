@@ -4,9 +4,9 @@
 parameters:
     database_host:     127.0.0.1
     database_port:     3306
-    database_name:     symfony-pmet
-    database_user:     root
-    database_password: dataflow88
+    database_name:     
+    database_user:     
+    database_password: 
     # You should uncomment this if you want use pdo_sqlite
     # database_path: "%kernel.root_dir%/data.db3"
 

@@ -17,11 +17,9 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new AppBundle\AppBundle(),
             new Flob\Bundle\FoundationBundle\FlobFoundationBundle(),
-            new Sm\Study\EssentialphpBundle\SmStudyEssentialphpBundle(),
             new Sm\Study\UarsymfonyBundle\SmStudyUarsymfonyBundle(),
             new Symfony\Bundle\AsseticBundle\AsseticBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Sm\Study\OopSymfonyBundle\SmStudyOopSymfonyBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

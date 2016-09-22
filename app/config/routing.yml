@@ -1,17 +1,7 @@
-sm_study_oop_symfony:
-    resource: "@SmStudyOopSymfonyBundle/Controller/"
-    type:     annotation
-    prefix:   /oopsymphony
-
 sm_study_uarsymfony:
     resource: "@SmStudyUarsymfonyBundle/Controller/"
     type:     annotation
     prefix:   /up-and-running-symphony2
-
-sm_study_essentialphp:
-    resource: "@SmStudyEssentialphpBundle/Controller/"
-    type:     annotation
-    prefix:   /php-mysql-essential-training
 
 app:
     resource: "@AppBundle/Controller/"
