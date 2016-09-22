@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Publication edit</h1>
+
+    {{ form_start(edit_form) }}
+        {{ form_widget(edit_form) }}
+        <input class="success button" type="submit" value="Save Edit" />
+    {{ form_end(edit_form) }}
+
+    <a class="button" href="{{ path('publication_index') }}">Back to the list</a>
+
+<span>
+    {{ form_start(delete_form) }}
+        <input class="alert button" type="submit" value="Delete">
+    {{ form_end(delete_form) }}
+</span>
+
+{% endblock %}

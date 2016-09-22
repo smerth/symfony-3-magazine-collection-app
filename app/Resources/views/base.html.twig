@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets filter='cssrewrite'
+              '%kernel.root_dir%/../vendor/zurb/foundation/dist/foundation-flex.min.css'
+              '%kernel.root_dir%/../vendor/florianbelhomme/flob-foundation-bundle/Resources/public/css/foundationtosymfony.css'
+              '@SmStudyUarsymfonyBundle/Resources/public/css/custom.css'
+            %}
+            <link rel="stylesheet" href="{{ asset_url }}"/>
+            {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/octicons/3.5.0/octicons.min.css"> #}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
+            {% endstylesheets %}
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+    </head>
+    <body>
+      <div class="top-bar">
+
+ 
+        <div class="top-bar-left">
+          {{ knp_menu_render('main') }}
+        </div>
+    {# <div class="top-bar-right">
+          <ul class="menu">
+            <li><input type="search" placeholder="Search"></li>
+            <li><button type="button" class="button">Search</button></li>
+          </ul>
+        </div> #}
+    
+    </div>
+
+      <div class="callout large primary">
+        <div class="row column text-center">
+          {% block callout %}
+            <h1 class="section-callout"><i class="zmdi zmdi-library mdc-text-light-blue"></i> Magazine Collection App</h1>
+            <p>This Symfony 3 demonstration app is based on the Lynda.com course "Up and Running with Symfony 2 for PHP". Theming is based on Foundation for Sites. The following bundles were implemented: Assetic, KNP Menu Bundle, Flob Foundation Bundle.</p>
+          {% endblock %}
+        </div>
+      </div>
+
+      <div class="row" id="content">
+          <div class="small-12 medium-3 columns">
+            <h4>Navigate Collection</h4>
+              {% block sidebar %}
+                {{ knp_menu_render('uarsymfony') }}
+              {% endblock %}
+          </div>
+          <div class="small-12 medium-9 columns">
+            {% block body %}{% endblock %}
+          </div>
+      </div>
+
+      {% block javascripts %}
+          {% javascripts
+              '%kernel.root_dir%/../vendor/components/jquery/jquery.min.js'
+              '%kernel.root_dir%/../vendor/zurb/foundation/dist/foundation.min.js'
+              '%kernel.root_dir%/../vendor/zurb/foundation/js/foundation.equalizer.js'
+
+
+'%kernel.root_dir%/../vendor/zurb/foundation/js/foundation.toggler.js'
+'%kernel.root_dir%/../vendor/zurb/foundation/js/foundation.util.motion.js'
+'%kernel.root_dir%/../vendor/zurb/foundation/js/foundation.util.triggers.js'
+
+
+
+          %}
+          <script src="{{ asset_url }}"></script>
+          {% endjavascripts %}
+      {% endblock %}
+    </body>
+</html>

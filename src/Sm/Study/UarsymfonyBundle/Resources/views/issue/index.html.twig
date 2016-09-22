@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+{% block title %}Issue List{% endblock %}
+
+
+
+{% block body %}
+    <h1>Issue list</h1>
+
+
+
+<div class="row" data-equalizer data-equalize-on="medium" id="test-eq">
+    {% for issue in issues %}
+  <div class="small-6 medium-4 columns">
+    <div class="callout" data-equalizer-watch>
+        <span><i class="fi-x-circle"></i>Publication: </span>{{ issue.publication.name }}
+        <a href="{{ path('issue_show', { 'id': issue.id }) }}">Issue #{{ issue.number }} - {% if issue.datePublication %}{{ issue.datePublication|date('Y-m-d') }}{% endif %}</a>
+      {% if issue.cover %}<a class="thumbnail" href="{{ path('issue_show', { 'id': issue.id }) }}"><img 
+                    src="{{ asset(issue.getCoverWeb) }}"/></a>{% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+        {# </div> #}
+    <a class="button" href="{{ path('issue_new') }}">Create a new entry</a>
+
+{% endblock %}

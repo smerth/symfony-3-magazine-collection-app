@@ -1,0 +1,17 @@
+# services:
+#    sm_study_uarsymfony.example:
+#        class: Sm\Study\UarsymfonyBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]
+
+# KNP Menu Builder and each instance of the sites defined menus as services:
+services:
+    sm_study_uarsymfony.menu_builder:
+        class: Sm\Study\UarsymfonyBundle\Menu\MenuBuilder
+        arguments: ["@knp_menu.factory"]
+
+    sm_study_uarsymfony.uarsymfony_menu:
+        class: Knp\Menu\MenuItem # the service definition requires setting the class
+        factory: ["@sm_study_uarsymfony.menu_builder", createUarsymfonyMenu]
+        arguments: ["@request_stack"]
+        tags:
+            - { name: knp_menu.menu, alias: uarsymfony } # The alias is what is used to retrieve the menu

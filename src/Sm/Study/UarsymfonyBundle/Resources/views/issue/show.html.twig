@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+{% block title %}Issue{% endblock %}
+
+{% block body %}
+    <h1>Issue</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ issue.id }}</td>
+            </tr>
+            <tr>
+                <th>Number</th>
+                <td>{{ issue.number }}</td>
+            </tr>
+            <tr>
+                <th>Datepublication</th>
+                <td>{% if issue.datePublication %}{{ issue.datePublication|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Cover</th>
+                <td>{{ issue.cover }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+   
+    <a class="button" href="{{ path('issue_index') }}">Back to the list</a>
+
+    <a class="button" href="{{ path('issue_edit', { 'id': issue.id }) }}">Edit</a>
+
+    {{ form_start(delete_form) }}
+        <input class="button alert" type="submit" value="Delete">
+    {{ form_end(delete_form) }}
+        
+{% endblock %}
