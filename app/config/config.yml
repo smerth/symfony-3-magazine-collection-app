@@ -43,9 +43,9 @@ doctrine:
         driver:   pdo_mysql
         host:     "localhost"
         port:     "3306"
-        dbname:   "symfony-magazine-app-demo"
-        user:     "YOUR_DB_USERNAME_HERE"
-        password: "YOUR_PASSWORD_HERE"
+        dbname:   "symfony-magazine-collection-vx"
+        user:     "root"
+        password: "dataflow88"
         charset:  UTF8
         # if using pdo_sqlite as your database driver:
         #   1. add the path in parameters.yml
